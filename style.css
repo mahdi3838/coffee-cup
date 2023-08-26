@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #aab5ff;
+}
+.container{
+    position: relative;
+    top: 50px;
+}
+.cup{
+    position: relative;
+    width: 200px;
+    height: 210px;
+    background: #fff;
+    border-bottom-left-radius: 85px;
+    border-bottom-right-radius: 85px;
+}
+.top{
+    position: absolute;
+    left: 0;
+    top: -25px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right,#f9f9f9,#d9d9d9);
+    border-radius: 50%;
+}
+.carousel{
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: calc(100% - 12px);
+    height: 42px;
+    background: linear-gradient(to left,#f9f9f9,#d9d9d9);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.coffee{
+    position: relative;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#c57e65,#e28462);
+    border-radius: 50%;
+}
+.handell{
+    position: absolute;
+    width: 110px;
+    height: 130px;
+    top: 15px;
+    right: -51px;
+    transform: rotate(38deg);
+    border: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-radius: 50%;
+}
+.plate{
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0,0,0,.2);
+    background: linear-gradient(to right,#f9f9f9,#efefef);
+}
+.plate::before{
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 7px;
+    right: 8px;
+    bottom: 7px;
+    border-radius: 50%;
+    background: linear-gradient(to left,#f9f9f9,#efefef);
+}
+.plate::after{
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    right: 20px;
+    bottom: 40px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(0,0,0,.2) 25%,transparent,transparent);
+}
+.chorus{
+    position: relative;
+    display: flex;
+    padding: 0 10px;
+    z-index: 1;
+}
+.chorus span{
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 1px 50px;
+    min-width: 6px;
+    height: 100px;
+    border-radius: 50%;
+    animation: ani 5s linear infinite;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * 0.5s);
+}
+@keyframes ani {
+    0%{
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+        background: #fff;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-100px) scaleX(5);
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-200px) scaleX(10);
+        opacity: 0;
+        background: #fff;
+    }
+}
